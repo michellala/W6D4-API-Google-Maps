@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+    // Below we were told that there are two required options for every map: center and zoom. The initial resolution at whcih to display the map is set bye the zoom property; where zoom = 0 corresponds to a map of the Earth fully zommed out. Larger zoom levels zoom in at a higher resolution. 
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 43.423, lng: -79.775},
+          zoom: 15
+        });
+      }
+    </script>
+     <!-- below is how you link to your API key that you get. The URl is the location of the Javascript file that loads all of the symbols and definitnitons you need to using the Maps Javscript API REQUIRED!! 
+     The async attribute below it, lets the browser render the rest of my website while the Maps Javascript API loads. Once the API is ready then it will call the function specified using the callback parameter-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHd4OwRhBEuC9HRy73Dz15k3_mPTi4AkQ&callback=initMap"
+    async defer></script>
+  </body>
+</html>
